@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PostureMonitor</string>
+    <string name="posture_image">Posture Image</string>
+</resources>

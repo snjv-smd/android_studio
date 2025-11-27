@@ -1,0 +1,10 @@
+<resources>
+    <color name="dark_bg">#111826</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#9AA6B2</color>
+    <color name="light_green_translucent">#E8F8F0</color>
+    <color name="green_dark">#00A86B</color>
+    <color name="card_white">#FFFFFF</color>
+    <color name="bottom_nav_bg">#FFFFFF</color>
+    <color name="bottom_nav_tint">#9AA6B2</color>
+</resources>
