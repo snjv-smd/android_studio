@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tips"
-                android:textColor="@color/text_primary"
+                android:textColor="@color/text_on_card"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Small habits that improve posture"
-                android:textColor="@color/text_secondary"
+                android:textColor="@color/text_on_card_secondary"
                 android:textSize="12sp"/>
         </LinearLayout>
 
@@ -79,7 +79,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Sit tall"
-                            android:textColor="@color/text_primary"
+                            android:textColor="@color/text_on_card"
                             android:textStyle="bold"/>
 
                         <TextView
@@ -87,7 +87,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Keep your shoulders back and your spine neutral. Take short posture breaks every 30 minutes."
-                            android:textColor="@color/text_secondary"
+                            android:textColor="@color/text_on_card_secondary"
                             android:textSize="13sp"
                             android:layout_marginTop="6dp"/>
                     </LinearLayout>
@@ -127,7 +127,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Adjust screen"
-                            android:textColor="@color/text_primary"
+                            android:textColor="@color/text_on_card"
                             android:textStyle="bold"/>
 
                         <TextView
@@ -135,7 +135,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Position your screen at eye level so you don't tilt your head forward."
-                            android:textColor="@color/text_secondary"
+                            android:textColor="@color/text_on_card_secondary"
                             android:textSize="13sp"
                             android:layout_marginTop="6dp"/>
                     </LinearLayout>

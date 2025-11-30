@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Posture Monitor"
-            android:textColor="@color/text_primary"
+            android:textColor="@color/text_on_card"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Build your perfect posture streak"
-            android:textColor="@color/text_secondary"
+            android:textColor="@color/text_on_card_secondary"
             android:textSize="12sp"
             android:layout_marginTop="4dp"/>
     </LinearLayout>
@@ -101,7 +101,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Perfect Posture Today"
-                        android:textColor="@color/text_primary"
+                        android:textColor="@color/text_on_card"
                         android:textStyle="bold"
                         android:layout_marginTop="8dp"/>
 
@@ -109,7 +109,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Start monitoring to track your posture"
-                        android:textColor="@color/text_secondary"
+                        android:textColor="@color/text_on_card_secondary"
                         android:textSize="12sp"
                         android:layout_marginTop="6dp"/>
                 </LinearLayout>
@@ -142,7 +142,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Session Time"
-                            android:textColor="@color/text_secondary"
+                            android:textColor="@color/text_on_card_secondary"
                             android:textSize="12sp"/>
 
                         <TextView
@@ -175,7 +175,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Slouches"
-                            android:textColor="@color/text_secondary"
+                            android:textColor="@color/text_on_card_secondary"
                             android:textSize="12sp"/>
 
                         <TextView
@@ -210,7 +210,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Good Posture"
-                        android:textColor="@color/text_secondary"
+                        android:textColor="@color/text_on_card_secondary"
                         android:textSize="12sp"/>
 
                     <TextView

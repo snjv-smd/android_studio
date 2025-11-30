@@ -41,7 +41,7 @@ public class StatsFragment extends Fragment {
             TextView tv = new TextView(requireContext());
             tv.setText(String.valueOf(i + 1));
             tv.setGravity(Gravity.CENTER);
-            tv.setTextColor(ContextCompat.getColor(requireContext(), R.color.text_primary));
+            tv.setTextColor(ContextCompat.getColor(requireContext(), R.color.text_on_card));
             tv.setTextSize(12f);
             tv.setPadding(padding, padding, padding, padding);
 

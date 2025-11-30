@@ -1,6 +1,327 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/dark_bg"
+    android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Title -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="12dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textColor="@color/text_on_card"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Customize your posture monitoring experience"
+                android:textColor="@color/text_on_card_secondary"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <!-- Weight configuration card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="@color/card_white">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weight Configuration"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_on_card"/>
+
+                <!-- Body weight -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Body Weight"
+                    android:textColor="@color/text_on_card_secondary"
+                    android:layout_marginTop="12dp"/>
+
+                <EditText
+                    android:id="@+id/et_body_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/edit_text_bg"
+                    android:padding="12dp"
+                    android:hint="Enter your body weight in kg"
+                    android:textColor="@color/text_on_card"
+                    android:textColorHint="@color/text_on_card_secondary"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Backpack Weight"
+                    android:textColor="@color/text_on_card_secondary"
+                    android:layout_marginTop="12dp"/>
+
+                <EditText
+                    android:id="@+id/et_backpack_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/edit_text_bg"
+                    android:padding="12dp"
+                    android:hint="Enter your backpack weight in kg"
+                    android:textColor="@color/text_on_card"
+                    android:textColorHint="@color/text_on_card_secondary"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Notifications card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="@color/card_white">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Notifications"
+                        android:textColor="@color/text_on_card"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switch_notifications"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/card_grey"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Vibration"
+                        android:textColor="@color/text_on_card"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switch_vibration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/card_grey"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Sound"
+                        android:textColor="@color/text_on_card"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switch_sound"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Detection settings card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="@color/card_white">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Detection Settings"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_on_card"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Detection Sensitivity"
+                    android:textColor="@color/text_on_card_secondary"
+                    android:layout_marginTop="12dp"/>
+
+                <SeekBar
+                    android:id="@+id/seek_sensitivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="10"
+                    android:progress="5"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="6dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Less Sensitive"
+                        android:textColor="@color/text_on_card_secondary"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_sensitivity_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5/10"
+                        android:textColor="@color/text_on_card"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="More Sensitive"
+                        android:textColor="@color/text_on_card_secondary"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- About card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="@color/card_white">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_on_card"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Version"
+                        android:textColor="@color/text_on_card_secondary"/>
+
+                    <TextView
+                        android:id="@+id/tv_version"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1.0.0"
+                        android:textColor="@color/text_on_card"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Build"
+                        android:textColor="@color/text_on_card_secondary"/>
+
+                    <TextView
+                        android:id="@+id/tv_build"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2025.10.20"
+                        android:textColor="@color/text_on_card"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Demo Mode\nThis app simulates posture detection. For real monitoring, connect to a physical sensor device."
+                    android:layout_marginTop="10dp"
+                    android:padding="8dp"
+                    android:background="@drawable/demo_box_bg"
+                    android:textColor="@color/text_on_card_secondary"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <View android:layout_width="match_parent" android:layout_height="32dp"/>
+    </LinearLayout>
+</ScrollView>

@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Posture Monitor"
-                android:textColor="@color/text_primary"
+                android:textColor="@color/text_on_card"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Build your perfect posture streak"
-                android:textColor="@color/text_secondary"
+                android:textColor="@color/text_on_card_secondary"
                 android:textSize="12sp"/>
         </LinearLayout>
 
@@ -58,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Current Streak"
-                    android:textColor="@color/text_secondary"
+                    android:textColor="@color/text_on_card_secondary"
                     android:layout_marginTop="8dp"/>
 
                 <TextView
@@ -74,7 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="days without slouching"
-                    android:textColor="@color/text_secondary"
+                    android:textColor="@color/text_on_card_secondary"
                     android:layout_marginTop="8dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -105,7 +105,7 @@
                     <TextView android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Best Streak"
-                        android:textColor="@color/text_secondary"
+                        android:textColor="@color/text_on_card_secondary"
                         android:textSize="12sp"/>
 
                     <TextView
@@ -120,7 +120,7 @@
                     <TextView android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="days"
-                        android:textColor="@color/text_secondary"
+                        android:textColor="@color/text_on_card_secondary"
                         android:textSize="12sp"
                         android:layout_marginTop="6dp"/>
                 </LinearLayout>
@@ -145,7 +145,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Success Rate"
-                        android:textColor="@color/text_secondary"
+                        android:textColor="@color/text_on_card_secondary"
                         android:textSize="12sp"/>
 
                     <TextView
@@ -160,7 +160,7 @@
                     <TextView android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0/0 days"
-                        android:textColor="@color/text_secondary"
+                        android:textColor="@color/text_on_card_secondary"
                         android:textSize="12sp"
                         android:layout_marginTop="6dp"/>
                 </LinearLayout>
@@ -193,7 +193,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total Time"
-                        android:textColor="@color/text_secondary"
+                        android:textColor="@color/text_on_card_secondary"
                         android:textSize="12sp"/>
 
                     <TextView
@@ -208,7 +208,7 @@
                     <TextView android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0 sessions"
-                        android:textColor="@color/text_secondary"
+                        android:textColor="@color/text_on_card_secondary"
                         android:textSize="12sp"
                         android:layout_marginTop="6dp"/>
                 </LinearLayout>
@@ -233,7 +233,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total Slouches"
-                        android:textColor="@color/text_secondary"
+                        android:textColor="@color/text_on_card_secondary"
                         android:textSize="12sp"/>
 
                     <TextView
@@ -248,7 +248,7 @@
                     <TextView android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="all sessions"
-                        android:textColor="@color/text_secondary"
+                        android:textColor="@color/text_on_card_secondary"
                         android:textSize="12sp"
                         android:layout_marginTop="6dp"/>
                 </LinearLayout>
@@ -274,7 +274,7 @@
                     android:layout_height="wrap_content"
                     android:text="Last 28 Days"
                     android:textStyle="bold"
-                    android:textColor="@color/text_primary"/>
+                    android:textColor="@color/text_on_card"/>
 
                 <!-- Simple grid-like placeholder.
                      Replace with a proper calendar view later. -->
@@ -297,17 +297,17 @@
                     <View android:layout_width="12dp" android:layout_height="12dp"
                         android:background="@color/green_dark"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="  Perfect" android:textColor="@color/text_secondary"/>
+                        android:text="  Perfect" android:textColor="@color/text_on_card_secondary"/>
 
                     <View android:layout_width="12dp" android:layout_height="12dp"
                         android:layout_marginLeft="12dp" android:background="@color/red_alert"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="  Slouched" android:textColor="@color/text_secondary"/>
+                        android:text="  Slouched" android:textColor="@color/text_on_card_secondary"/>
 
                     <View android:layout_width="12dp" android:layout_height="12dp"
                         android:layout_marginLeft="12dp" android:background="@color/card_grey"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="  No data" android:textColor="@color/text_secondary"/>
+                        android:text="  No data" android:textColor="@color/text_on_card_secondary"/>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -346,14 +346,14 @@
                     android:layout_height="wrap_content"
                     android:text="No sessions yet"
                     android:layout_marginTop="12dp"
-                    android:textColor="@color/text_primary"/>
+                    android:textColor="@color/text_on_card"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Start monitoring to track your progress"
                     android:layout_marginTop="6dp"
-                    android:textColor="@color/text_secondary"/>
+                    android:textColor="@color/text_on_card_secondary"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

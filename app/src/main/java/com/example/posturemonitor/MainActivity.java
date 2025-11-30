@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             } else if (id == R.id.nav_tips) {
                 selected = new TipsFragment(); // <- changed
             } else if (id == R.id.nav_settings) {
-                selected = new MonitorFragment(); // placeholder
+                selected = new SettingsFragment(); // placeholder
             } else {
                 return false;
             }
