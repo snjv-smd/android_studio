@@ -231,12 +231,164 @@
                         android:layout_marginTop="12dp"/>
 
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
+
+
+
+            <!-- Backpack Weight Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/card_background"
+                android:layout_marginHorizontal="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_backpack" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Backpack Weight"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Weight Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp"
+                    android:weightSum="2">
+
+                    <!-- Current Weight -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Current Weight"
+                            android:textSize="14sp"
+                            android:textColor="#666"/>
+
+                        <TextView
+                            android:id="@+id/currentWeight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0 kg"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="4dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0.0% of body weight"
+                            android:textSize="12sp"
+                            android:textColor="#666"/>
+                    </LinearLayout>
+
+                    <!-- Recommended Weight -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Recommended"
+                            android:textSize="14sp"
+                            android:textColor="#666"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/recommendedWeight"
+                            android:text="&lt; 10.5 kg"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#4CAF50"
+                            android:layout_marginTop="4dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7.0 - 10.5 kg ideal"
+                            android:textSize="12sp"
+                            android:textColor="#666"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Set your backpack and body weight in Settings to get personalized recommendations."
+                    android:textSize="12sp"
+                    android:textColor="#666"
+                    android:layout_marginTop="8dp"/>
+
+            </LinearLayout>
+
+
+            <!-- Quick Tips Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@drawable/card_background_blue"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quick Tips"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="• Keep shoulders back and relaxed\n• Tighten backpack straps evenly\n• Engage your core muscles\n• Take breaks every 20–30 minutes"
+                    android:textSize="14sp"
+                    android:layout_marginTop="12dp"/>
+            </LinearLayout>
 
         </LinearLayout>
 
+
     </androidx.core.widget.NestedScrollView>
+
 
     <!-- Bottom navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -256,3 +408,4 @@
         android:layout_marginBottom="72dp"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+

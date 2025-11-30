@@ -26,4 +26,7 @@
     <!-- other helpers -->
     <color name="card_orange_light">#FFF3E0</color>
     <color name="light_green_translucent">#E8F8F2</color>
+
+    <color name="monitor">#48494B</color>
+    <color name="retry">#777B7E</color>
 </resources>
