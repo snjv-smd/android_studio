@@ -29,4 +29,8 @@
 
     <color name="monitor">#48494B</color>
     <color name="retry">#777B7E</color>
+
+    <color name="monitor_on">#2ECC71</color>      <!-- green -->
+    <color name="monitor_off">#555555</color>    <!-- dark gray -->
+
 </resources>
