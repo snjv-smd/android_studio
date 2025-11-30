@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             } else if (id == R.id.nav_stats) {
                 selected = new StatsFragment();
             } else if (id == R.id.nav_tips) {
-                selected = new MonitorFragment(); // placeholder
+                selected = new TipsFragment(); // <- changed
             } else if (id == R.id.nav_settings) {
                 selected = new MonitorFragment(); // placeholder
             } else {
