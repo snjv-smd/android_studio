@@ -16,6 +16,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        String[] permissions = {
+                "android.permission.ACCESS_FINE_LOCATION",
+                "android.permission.ACCESS_COARSE_LOCATION",
+                "android.permission.BLUETOOTH_CONNECT",
+                "android.permission.BLUETOOTH_SCAN"
+        };
+
+        requestPermissions(permissions, 1001);
+
         super.onCreate(savedInstanceState);
 
         // Try to set the normal activity layout. If that fails we stop here with a toast.

@@ -1,5 +1,7 @@
 package com.example.posturemonitor;
 
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothSocket;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,11 +19,29 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.bluetooth.BluetoothDevice;
+import java.io.InputStream;
 import java.util.Random;
+import java.util.UUID;
+
+import android.Manifest;
+import android.content.pm.PackageManager;
+import androidx.core.app.ActivityCompat;
+
 
 public class MonitorFragment extends Fragment {
 
     private static final String TAG = "MonitorFragment";
+
+    // Bluetooth
+    private BluetoothAdapter btAdapter;
+    private BluetoothSocket btSocket;
+    private InputStream btInput;
+    private boolean btConnected = false;
+
+    private final UUID HC05_UUID =
+            UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+
 
     private TextView tvTime;
     private TextView tvSlouches;
@@ -42,6 +62,8 @@ public class MonitorFragment extends Fragment {
     private int colorOn;
     private int colorOff;
 
+
+
     private final Runnable tick = new Runnable() {
         @Override
         public void run() {
@@ -49,7 +71,6 @@ public class MonitorFragment extends Fragment {
             long now = SystemClock.elapsedRealtime();
             long elapsed = (now - startTimeMs) + elapsedBeforeMs;
             updateTimeText(elapsed);
-            maybeSimulateSlouch();
             updateGoodPercent(elapsed, slouches);
             handler.postDelayed(this, 1000);
         }
@@ -72,6 +93,9 @@ public class MonitorFragment extends Fragment {
         btnRetry = safeFindButton(view, R.id.retry_btn);
 
         storage = new SessionStorage(requireContext());
+
+        //bluetooth
+        connectToHC05();
 
         // load colors safely (only if context available)
         try {
@@ -155,14 +179,6 @@ public class MonitorFragment extends Fragment {
         elapsedBeforeMs = 0L;
     }
 
-    private void maybeSimulateSlouch() {
-        int chance = rng.nextInt(1000);
-        if (chance < 12) {
-            slouches++;
-            if (tvSlouches != null) tvSlouches.setText(String.valueOf(slouches));
-        }
-    }
-
     private void updateTimeText(long millis) {
         int totalSec = (int) (millis / 1000);
         int mm = totalSec / 60;
@@ -218,4 +234,105 @@ public class MonitorFragment extends Fragment {
         super.onDestroyView();
         handler.removeCallbacksAndMessages(null);
     }
+
+    private void connectToHC05() {
+        if (ActivityCompat.checkSelfPermission(requireContext(),
+                Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(requireActivity(),
+                    new String[]{Manifest.permission.BLUETOOTH_CONNECT},
+                    1001);
+
+            return; // STOP HERE — wait for user to accept permission
+        }
+
+
+        btAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (btAdapter == null) {
+            Toast.makeText(getContext(), "Bluetooth not supported", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        BluetoothDevice hc05 = null;
+        for (BluetoothDevice dev : btAdapter.getBondedDevices()) {
+            if (dev.getName().contains("HC")) {
+                hc05 = dev;
+                break;
+            }
+        }
+
+        if (hc05 == null) {
+            Toast.makeText(getContext(), "Pair HC-05 first", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        try {
+            btSocket = hc05.createRfcommSocketToServiceRecord(HC05_UUID);
+            btSocket.connect();
+            btInput = btSocket.getInputStream();
+            btConnected = true;
+
+            Toast.makeText(getContext(), "HC-05 Connected!", Toast.LENGTH_SHORT).show();
+
+            startBluetoothReader();
+
+        } catch (Exception e) {
+            Toast.makeText(getContext(), "Failed to connect: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void startBluetoothReader() {
+        Thread t = new Thread(() -> {
+            byte[] buffer = new byte[256];
+            int bytes;
+
+            while (btConnected) {
+                try {
+                    bytes = btInput.read(buffer);
+                    String incoming = new String(buffer, 0, bytes).trim();
+
+                    requireActivity().runOnUiThread(() -> handleBluetoothData(incoming));
+
+                } catch (Exception e) {
+                    btConnected = false;
+                }
+            }
+        });
+
+        t.start();
+    }
+
+    private void handleBluetoothData(String msg) {
+
+        // Example messages from Arduino:
+        // SLOUCH
+        // GOOD
+        // PITCH:12
+        // IR:432
+
+        if (!running) return;
+
+        if (msg.equals("SLOUCH")) {
+            slouches++;
+            if (tvSlouches != null) tvSlouches.setText(String.valueOf(slouches));
+        }
+
+        if (msg.startsWith("PITCH:")) {
+            // Example: update UI or store pitch
+        }
+
+        if (msg.startsWith("IR:")) {
+            // Example: show IR value somewhere
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        try {
+            btConnected = false;
+            if (btSocket != null) btSocket.close();
+        } catch (Exception ignored) {}
+    }
+
 }
